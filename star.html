@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSS Star</title>
+    <link rel="stylesheet" href="assets/css/cssstar.css">
+  </head>
+  <body>
+
+    <div class='container'>
+      <div class='frame frame--realistic'> <!-- 想进行3D变化的元素父类必须有perspective属性 -->
+        <!--
+        <div class='star star--ani'></div>
+        <div class="star star--spin" style="margin-top: 10em;" ></div>
+        <div class="star star--flash" style="margin-top: 10em;" ></div>
+      -->
+      </div>
+    </div>
+
+  </body>
+  <script src="assets/js/jquery-1.11.1.min.js"></script>
+  <script>
+  $('.star').click(function(){
+    $('.star').removeClass('star-blue star-yellow star-purple star-brown star-green');
+    var color = ['blue', 'yellow', 'purple', 'brown', 'green'];
+    var rnd = Math.floor(Math.random() * (5 - 0) + 0);
+    $('.star').addClass('star-' + color[rnd]);
+  });
+
+  for(var i =0;i<10;i++) {
+    (function makeDiv(){
+        var divsize = ((Math.random()*100) + 50).toFixed();
+        var magic = Math.floor(Math.random() * (3 - 0) + 0);
+        var anim = ['ani', 'spin', 'flash'];
+
+        var color = '#'+ Math.round(0xffffff * Math.random()).toString(16);
+        $newdiv = $('<div class="star star--'+anim[magic]+'"></div>').css({
+            'color': color
+        });
+
+        var posx = (Math.random() * ($(document).width() - divsize)).toFixed();
+        var posy = (Math.random() * ($(document).height() - divsize)).toFixed();
+
+        $newdiv.css({
+            'position':'absolute',
+            'left':posx+'px',
+            'top':posy+'px',
+            'display':'none'
+        }).appendTo( '.frame' ).fadeIn(100).delay(300).fadeOut(200, function(){
+           $(this).remove();
+           makeDiv();
+        });
+    })();
+  }
+
+  </script>
+</html>

@@ -4,10 +4,29 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CSS Flyer</title>
+    <title>CSS Door</title>
     <link rel="stylesheet" href="assets/css/cssfly.css">
   </head>
   <body>
-    {data.body}
+
+    <div class='container'>
+      <div class='frame frame--realistic'> <!-- 想进行3D变化的元素父类必须有perspective属性 -->
+        <div class='door door--close'>
+        </div>
+      </div>
+    </div>
+
   </body>
+  <script src="assets/js/jquery-1.11.1.min.js"></script>
+  <script>
+  $(".door--close").click(function(){
+    $(".door").removeClass('door--close');
+    $(".door").addClass('door--open');
+  });
+
+  $(".door--open").click(function(){
+    $(".door").removeClass('door--open');
+    $(".door").addClass('door--close');
+  });
+  </script>
 </html>
