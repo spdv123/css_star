@@ -31,17 +31,19 @@
 
   for(var i =0;i<10;i++) {
     (function makeDiv(){
-        var divsize = ((Math.random()*100) + 50).toFixed();
+        var color = ['blue', 'yellow', 'purple', 'brown', 'green'];
+        var rndc = Math.floor(Math.random() * (5 - 0) + 0);
         var magic = Math.floor(Math.random() * (3 - 0) + 0);
         var anim = ['ani', 'spin', 'flash'];
 
-        var color = '#'+ Math.round(0xffffff * Math.random()).toString(16);
-        $newdiv = $('<div class="star star--'+anim[magic]+'"></div>').css({
-            'color': color
-        });
+        //var color = '#'+ Math.round(0xffffff * Math.random()).toString(16);
+        $newdiv = $('<div class="star star-'+color[rndc]+' star--'+anim[magic]+'"></div>');
+        var divsize = 100;//$newdiv.height;
 
-        var posx = (Math.random() * ($(document).width() - divsize)).toFixed();
-        var posy = (Math.random() * ($(document).height() - divsize)).toFixed();
+        var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+        var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+        var posx = (Math.random() * (w - divsize)).toFixed();
+        var posy = (Math.random() * (h - divsize)).toFixed();
 
         $newdiv.css({
             'position':'absolute',

@@ -84,21 +84,65 @@
 
 .star-blue {
   color: #aff0ff;
-  border-bottom: #aff0ff;
+  border-bottom-color: #aff0ff;
 }
+.star-blue::before {
+  color: #aff0ff;
+  border-bottom-color: #aff0ff;
+}
+.star-blue::after {
+  color: #aff0ff;
+  border-bottom-color: #aff0ff;
+}
+
 .star-yellow {
   color: #ffffaa;
-  border-bottom: #ffffaa;
+  border-bottom-color: #ffffaa;
 }
+.star-yellow::before {
+  color: #ffffaa;
+  border-bottom-color: #ffffaa;
+}
+.star-yellow::after {
+  color: #ffffaa;
+  border-bottom-color: #ffffaa;
+}
+
 .star-purple {
   color: #fab9ff;
-  border-bottom: #fab9ff;
+  border-bottom-color: #fab9ff;
 }
+.star-purple::before {
+  color: #fab9ff;
+  border-bottom-color: #fab9ff;
+}
+.star-purple::after {
+  color: #fab9ff;
+  border-bottom-color: #fab9ff;
+}
+
 .star-brown {
   color: #ffebcd;
-  border-bottom: #ffebcd;
+  border-bottom-color: #ffebcd;
 }
+.star-brown::before {
+  color: #ffebcd;
+  border-bottom-color: #ffebcd;
+}
+.star-brown::after {
+  color: #ffebcd;
+  border-bottom-color: #ffebcd;
+}
+
 .star-green {
   color: #cdffcd;
-  border-bottom: #cdffcd;
+  border-bottom-color: #cdffcd;
+}
+.star-green::before {
+  color: #cdffcd;
+  border-bottom-color: #cdffcd;
+}
+.star-green::after {
+  color: #cdffcd;
+  border-bottom-color: #cdffcd;
 }
